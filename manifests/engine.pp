@@ -61,6 +61,8 @@ class heat::engine (
 
   service { 'heat-engine':
     ensure     => $service_ensure,
+    provider   => 'runit',
+    path       => '/etc/service',
     name       => $::heat::params::engine_service_name,
     enable     => $enabled,
     hasstatus  => true,

@@ -40,6 +40,8 @@ class heat::api (
 
   service { 'heat-api':
     ensure     => $service_ensure,
+    provider   => 'runit',
+    path       => '/etc/service',
     name       => $::heat::params::api_service_name,
     enable     => $enabled,
     hasstatus  => true,
