@@ -41,7 +41,7 @@ class heat::api (
   service { 'heat-api':
     ensure     => $service_ensure,
     name       => $::heat::params::api_service_name,
-    enable     => $enabled,
+    enable     => 'manual',
     hasstatus  => true,
     hasrestart => true,
     require    => [Package['heat-common'],

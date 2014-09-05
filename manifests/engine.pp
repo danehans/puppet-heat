@@ -62,7 +62,7 @@ class heat::engine (
   service { 'heat-engine':
     ensure     => $service_ensure,
     name       => $::heat::params::engine_service_name,
-    enable     => $enabled,
+    enable     => 'manual',
     hasstatus  => true,
     hasrestart => true,
     require    => [ File['/etc/heat/heat.conf'],
